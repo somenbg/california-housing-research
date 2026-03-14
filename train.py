@@ -24,12 +24,12 @@ from prepare import load_data, evaluate, TIME_BUDGET, NUM_FEATURES
 # Hyperparameters (edit these directly, no CLI flags needed)
 # ---------------------------------------------------------------------------
 
-HIDDEN_DIMS = [128, 64]     # hidden layer dimensions
-DROPOUT = 0.1               # dropout rate
+HIDDEN_DIMS = [256, 128]    # hidden layer dimensions
+DROPOUT = 0.05              # dropout rate
 LEARNING_RATE = 1e-3        # Adam learning rate
 WEIGHT_DECAY = 1e-5         # L2 regularization
 BATCH_SIZE = 256            # training batch size
-ACTIVATION = "relu"         # activation: relu, gelu, silu, tanh
+ACTIVATION = "gelu"         # activation: relu, gelu, silu, tanh
 
 # ---------------------------------------------------------------------------
 # Model

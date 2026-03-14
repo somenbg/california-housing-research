@@ -1,0 +1,1 @@
+{"experiment_id": 4, "hypothesis": "Cosine annealing LR schedule (1e-3 to 1e-6) will improve convergence", "metric_value": 0.178137, "status": "discard", "category": "optimization"}
