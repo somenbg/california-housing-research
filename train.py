@@ -26,7 +26,7 @@ from prepare import load_data, evaluate, TIME_BUDGET, NUM_FEATURES
 
 HIDDEN_DIMS = [256, 128]    # hidden layer dimensions
 DROPOUT = 0.05              # dropout rate
-LEARNING_RATE = 0.003        # Adam learning rate
+LEARNING_RATE = 0.01        # Adam learning rate
 WEIGHT_DECAY = 1e-5         # L2 regularization
 BATCH_SIZE = 256            # training batch size
 ACTIVATION = "gelu"         # activation: relu, gelu, silu, tanh
