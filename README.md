@@ -1,6 +1,6 @@
 # California Housing — Autonomous ML Research
 
-Autonomous research on the [California Housing dataset](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset) using the AutoResearch framework. An AI agent systematically explores model architectures, hyperparameters, and training strategies to minimize prediction error.
+Autonomous research on the [California Housing dataset](https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset) using the [AutoResearch](https://github.com/somenbg/autoresearch) framework. An AI agent systematically explores model architectures, hyperparameters, and training strategies to minimize prediction error.
 
 ## Dataset
 
@@ -12,7 +12,7 @@ Autonomous research on the [California Housing dataset](https://scikit-learn.org
 ## Quick Start
 
 ```bash
-# Install dependencies
+# Install dependencies (pulls autoresearch framework from GitHub)
 uv sync
 
 # Detect your platform
@@ -28,6 +28,18 @@ uv run ar run --max-experiments 10
 # Check progress
 uv run ar status
 uv run ar analyze
+
+# Launch live web dashboard
+uv run ar dashboard
+```
+
+## Updating the Framework
+
+This project uses [autoresearch](https://github.com/somenbg/autoresearch) as a dependency.
+To pull the latest framework updates (new features, bug fixes, dashboard improvements):
+
+```bash
+uv sync --upgrade-package autoresearch
 ```
 
 ## How It Works
@@ -49,8 +61,10 @@ program.md        # Agent instructions with research hints
 task.yaml         # Research task configuration
 data/dataset.csv  # California Housing dataset
 results.jsonl     # Experiment log (created on first run)
-ar/               # AutoResearch framework (platform detection, tracking, CLI)
 ```
+
+The `ar` framework (platform detection, experiment tracking, CLI, dashboard) is installed
+as a dependency from [somenbg/autoresearch](https://github.com/somenbg/autoresearch).
 
 ## Baseline
 
