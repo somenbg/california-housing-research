@@ -1,0 +1,32 @@
+task:
+  name: "california-housing"
+  description: >
+    Predict California median house values from census features (8 inputs → 1 output).
+    Dataset: 20,640 samples from the 1990 US Census. Target is MedHouseVal in $100k units.
+    Rich research surface: nonlinear relationships, geographic features, skewed distributions.
+
+dataset:
+  source: "data/dataset.csv"
+  prepare_script: "prepare.py"
+
+model:
+  train_script: "train.py"
+  editable_files: ["train.py"]
+  readonly_files: ["prepare.py"]
+  model_class: "tabular"
+
+evaluation:
+  metric: "val_loss"
+  direction: "minimize"
+  eval_command: "uv run train.py"
+
+budget:
+  time_limit_seconds: 60
+  max_experiments: unlimited
+
+platform:
+  device: auto
+
+constraints:
+  no_new_dependencies: true
+  no_modify_eval: true

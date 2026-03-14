@@ -1,0 +1,23 @@
+[project]
+name = "california-housing-research"
+version = "0.1.0"
+description = "Autonomous ML research on the California Housing dataset"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.9.0",
+    "numpy>=1.26.0",
+    "pandas>=2.1.0",
+    "pyyaml>=6.0",
+    "scikit-learn>=1.4.0",
+    "torch>=2.2.0",
+]
+
+[project.scripts]
+ar = "ar.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ar"]
